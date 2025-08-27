@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "price": 182.54,
+    "change": -1.24
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft Corporation",
+    "price": 318.21,
+    "change": 2.10
+  },
+  {
+    "symbol": "TSLA",
+    "name": "Tesla Inc.",
+    "price": 256.78,
+    "change": -5.32
+  },
+  {
+    "symbol": "AMZN",
+    "name": "Amazon.com Inc.",
+    "price": 134.56,
+    "change": 0.86
+  }
+]

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 export const StockTable = ({ stocks }) => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("test");
+  const [password, setPassword] = useState("1234");
   const [portfolio, setPortfolio] = useState([]);
 
   const handleLogin = (e) => {

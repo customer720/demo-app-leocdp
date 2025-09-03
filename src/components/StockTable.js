@@ -125,7 +125,7 @@ export const StockTable = ({ stocks }) => {
                             onClick={() =>
                               handleRemoveFromWatchlist(stock.symbol)
                             }
-                            className="btn btn-sm btn-outline-warning"
+                            className="btn btn-sm btn-outline-primary"
                           >
                             <i className="bi bi-star-fill me-1"></i>Watching
                           </button>

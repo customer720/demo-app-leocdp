@@ -45,18 +45,21 @@ export default function App() {
       username === configs.TEST_USER_NAME &&
       password === configs.TEST_USER_PASSWORD
     ) {
+      LeoObserver.recordEventUserLogin({ username: username })
       setLoggedIn(true);
-      localStorage.setItem(LOGIN_KEY_NAME, "true");
+      localStorage.setItem(LOGIN_KEY_NAME, "true");     
     } else {
       alert("Invalid credentials");
     }
   };
 
   const handleLogout = () => {
+    LeoObserver.recordEventUserLogout({ username: username })
     setLoggedIn(false);
     setUsername("");
     setPassword("");
     localStorage.removeItem(LOGIN_KEY_NAME);
+    
   };
 
   // The Login form is now a clean, centered Bootstrap Card
@@ -110,7 +113,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">📈 Stock Trading Dashboard</h1>
+        <h1 className="text-3xl font-bold">📈 Stock Trading Dashboard - Demo for LEO CDP </h1>
         <button onClick={handleLogout} className="btn btn-danger">
           Logout
         </button>

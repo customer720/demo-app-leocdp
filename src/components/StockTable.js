@@ -28,23 +28,31 @@ export const StockTable = ({ stocks }) => {
     setPortfolio((prev) => {
       const existing = prev.find((p) => p.symbol === stock.symbol);
       if (existing) {
-        return prev
-          .map((p) =>
+        return prev.map((p) =>
             p.symbol === stock.symbol
               ? { ...p, shares: p.shares + (action === "BUY" ? 1 : -1) }
               : p
           )
           .filter((p) => p.shares > 0);
       } else if (action === "BUY") {
+        
         return [...prev, { ...stock, shares: 1 }];
       }
       return prev;
     });
+
+    if(action === "BUY"){
+      LeoObserver.recordEventBuyStock({ stockSymbol: stock.symbol })
+    }
+    else {
+      LeoObserver.recordEventSellStock({ stockSymbol: stock.symbol })
+    }
   };
 
   const handleAddToWatchlist = (stockToAdd) => {
     if (!watchlist.some((stock) => stock.symbol === stockToAdd.symbol)) {
       setWatchlist((prev) => [...prev, stockToAdd]);
+      LeoObserver.recordEventRemoveWatchlist({ stockSymbol: stockToAdd.symbol })
     }
   };
 
@@ -52,6 +60,7 @@ export const StockTable = ({ stocks }) => {
     setWatchlist((prev) =>
       prev.filter((stock) => stock.symbol !== stockSymbol)
     );
+    LeoObserver.recordEventRemoveWatchlist({ stockSymbol: stockSymbol })
   };
 
   const isInWatchlist = (stockSymbol) => {

@@ -1,15 +1,15 @@
-# User Acceptance Testing (UAT) Plan for Product Desk Stock Trading Platform
+# User Acceptance Testing (UAT) Plan for Stock Trading Platform
 
 ## Document Information
-- **Document Title**: UAT Plan for Product Desk - Stock Trading Features
+- **Document Title**: UAT Plan for OneTrade - Stock Trading Features
 - **Version**: 1.0
 - **Date**: September 10, 2025
-- **Prepared By**: Grok 4 (Product Owner Assistant)
-- **Purpose**: This document provides a comprehensive guide for the UAT team to validate the stock trading functionalities of Product Desk, ensuring alignment with business requirements for customer conversion and satisfaction through integrated CDP, AI, and Gamification elements.
+- **Prepared By**: Trieu
+- **Purpose**: This document provides a comprehensive guide for the UAT team to validate the stock trading functionalities of OneTrade, ensuring alignment with business requirements for customer conversion and satisfaction through integrated CDP, AI, and Gamification elements.
 - **Audience**: UAT Testing Team, Business Stakeholders, Development Team
 
 ## 1. Introduction
-Product Desk is a next-generation platform designed to enhance user engagement in stock trading by integrating Customer Data Platform (CDP) for unified data management, Artificial Intelligence (AI) for personalized insights, and Gamification mechanics for motivational experiences. Inspired by successful models like Robinhood, the platform offers zero-commission trading, mobile-first interfaces, real-time market data, personalized challenges, reward systems, and social sharing incentives.
+OneTrade is a demo testing project, using CDP to enhance user engagement in stock trading for unified data management, Artificial Intelligence (AI) for personalized insights, and Gamification mechanics for motivational experiences. Inspired by successful models like Robinhood, the platform offers zero-commission trading, mobile-first interfaces, real-time market data, personalized challenges, reward systems, and social sharing incentives.
 
 UAT is the final testing phase where end-users or representatives validate the system in a production-like environment to confirm it meets specified requirements. This plan focuses on stock trading core features, including user onboarding, trading workflows, gamification interactions, AI-driven recommendations, and satisfaction-enhancing elements.
 
@@ -52,10 +52,10 @@ UAT is the final testing phase where end-users or representatives validate the s
 - **Hardware/Software**: Mobile devices (iOS/Android latest versions), Web browsers (Chrome, Safari, Firefox).
 - **Data**: Pre-populated mock accounts with virtual funds; simulated market data fluctuating in real-time.
 - **Tools**: 
-  - Defect tracking: Jira or Trello.
-  - Test management: TestRail or Excel for logging.
+  - Defect tracking: Google Sheets.
+  - Test management: PyTest for logging.
   - Automation (optional): Selenium for repetitive UI tests.
-- **Access**: Testers provided with credentials; Environment URL: https://uat.productdesk.com (mock).
+- **Access**: Testers provided with credentials; Environment URL: https://onetrade-example.leocdp.com/ (mock).
 - **Setup**: Ensure CDP feeds mock data; AI models trained on sample datasets; Gamification engine active.
 
 ## 6. Entry and Exit Criteria
@@ -83,11 +83,7 @@ UAT is the final testing phase where end-users or representatives validate the s
 Test cases are categorized by feature areas. Each includes: ID, Description, Steps, Expected Result, Priority (High/Medium/Low), and Pass/Fail criteria. Use a mix of positive/negative scenarios. Testers should capture screenshots/videos for failures.
 
 ### 8.1 User Onboarding and Account Management
-| Test ID | Description | Steps | Expected Result | Priority |
-|---------|-------------|-------|-----------------|----------|
-| UAT-ONB-01 | New user registration | 1. Open app/web. 2. Click "Sign Up". 3. Enter details (email, password). 4. Verify via OTP. | Account created; Welcome screen with personalized challenge (e.g., "Complete profile for bonus"). | High |
-| UAT-ONB-02 | Profile unification via CDP | 1. Log in with existing social account. 2. Import data from linked sources. | Unified profile shows aggregated data; AI suggests initial recommendations. | Medium |
-| UAT-ONB-03 | Negative: Invalid credentials | 1. Enter wrong email/password. | Error message; No access granted. | High |
+
 
 ### 8.2 Stock Trading Workflows
 | Test ID | Description | Steps | Expected Result | Priority |
@@ -137,4 +133,4 @@ Test cases are categorized by feature areas. Each includes: ID, Description, Ste
 - **References**: Product Requirements Document, Robinhood Case Study.
 - **Approval Signatures**: [Space for UAT Lead, Product Owner]
 
-This UAT plan ensures thorough validation of Product Desk's stock trading features, focusing on conversion and satisfaction. For questions, contact the Product Owner.
+This UAT plan ensures thorough validation of OneTrade's stock trading features, focusing on conversion and satisfaction. For questions, contact the Product Owner.

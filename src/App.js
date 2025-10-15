@@ -45,7 +45,8 @@ export default function App() {
       username === configs.TEST_USER_NAME &&
       password === configs.TEST_USER_PASSWORD
     ) {
-      LeoObserver.recordEventUserLogin({ username: username })
+      var email = username + "@example.com";
+      LeoObserverProxy.recordActionEvent("login-success", {"username": username,"email":email});
       setLoggedIn(true);
       localStorage.setItem(LOGIN_KEY_NAME, "true");     
     } else {
@@ -113,7 +114,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">📈 Stock Trading Dashboard - Demo for LEO CDP </h1>
+        <h1 className="text-3xl font-bold">📈 Stock Trading Dashboard - Demo CDP </h1>
         <button onClick={handleLogout} className="btn btn-danger">
           Logout
         </button>

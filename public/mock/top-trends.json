@@ -1,0 +1,26 @@
+[
+  { 
+    "id": 1, 
+    "topic": "#AIRevolution", 
+    "volume": "1.2M Posts",
+    "content": "The conversation around Artificial Intelligence is dominating social platforms. Key discussions involve the ethical implications of Generative AI, new productivity tools, and the impact of automation on the job market."
+  },
+  { 
+    "id": 2, 
+    "topic": "#CryptoBullRun", 
+    "volume": "850K Posts",
+    "content": "Crypto enthusiasts are buzzing about a potential bull run as Bitcoin breaks key resistance levels. Sentiment analysis shows a 70% positive outlook, driven by news of potential ETF approvals and institutional adoption."
+  },
+  { 
+    "id": 3, 
+    "topic": "#CleanEnergy", 
+    "volume": "500K Posts",
+    "content": "Renewable energy stocks and technologies are trending. Discussions are focused on new solar panel efficiencies, government subsidies for green energy projects, and the transition away from fossil fuels in the automotive sector."
+  },
+  { 
+    "id": 4, 
+    "topic": "#EVMarket", 
+    "volume": "320K Posts",
+    "content": "The Electric Vehicle market is heating up with new model announcements from legacy automakers. Consumers are debating range anxiety, charging infrastructure improvements, and the price competitiveness of new Chinese EV entrants."
+  }
+]

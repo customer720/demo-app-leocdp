@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Fed hints at interest rate pause",
+        "source": "Finance Daily",
+        "time": "2h ago",
+        "content": "The Federal Reserve signaled today that it may pause its aggressive interest rate hike campaign. Officials noted that inflation pressures are easing, though they remain vigilant. Markets reacted positively to the news, with major indices closing higher."
+    },
+    {
+        "id": 2,
+        "title": "Tech stocks rally ahead of earnings",
+        "source": "MarketWatch",
+        "time": "4h ago",
+        "content": "Major technology stocks surged today as investors anticipate strong quarterly earnings reports. Analysts predict that AI-driven demand will boost revenues for chipmakers and cloud service providers significantly this quarter."
+    },
+    {
+        "id": 3,
+        "title": "Oil prices stabilize after volatile week",
+        "source": "Bloomberg",
+        "time": "5h ago",
+        "content": "After a week of sharp fluctuations, oil prices have stabilized around $80 per barrel. Supply concerns from the Middle East are being balanced by softer demand forecasts from major Asian economies."
+    },
+    {
+        "id": 4,
+        "title": "New IPO sets record for 2024",
+        "source": "CNBC",
+        "time": "6h ago",
+        "content": "The latest tech unicorn IPO has shattered records for 2024, opening 40% above its listing price. The company, specialized in quantum computing software, has attracted significant institutional interest."
+    }
+]

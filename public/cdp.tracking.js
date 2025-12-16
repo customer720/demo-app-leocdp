@@ -21,6 +21,11 @@ if (typeof window.LeoObserverProxy === "object") {
     LeoObserverProxy.recordViewEvent("page-view", eventData);
   };
 
+  LeoObserver.recordEventContentView = function (eventData) {
+    eventData = eventData ? eventData : {};
+    LeoObserverProxy.recordViewEvent("content-view", eventData);
+  };
+
   LeoObserver.recordEventStockView = function (eventData) {
     eventData = eventData ? eventData : {};
     LeoObserverProxy.recordViewEvent("stock-view", eventData);
@@ -56,7 +61,7 @@ if (typeof window.LeoObserverProxy === "object") {
     LeoObserverProxy.recordActionEvent("buy-stock", eventData);
   };
 
-   // function to track Action Event "buy-stock"
+  // function to track Action Event "buy-stock"
   LeoObserver.recordEventCheckStock = function (eventData) {
     eventData = eventData ? eventData : {};
     LeoObserverProxy.recordActionEvent("check-stock", eventData);
@@ -166,5 +171,3 @@ if (typeof window.LeoObserverProxy === "object") {
     });
   };
 }
-
-

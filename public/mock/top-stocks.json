@@ -1,0 +1,7 @@
+[
+  { "id": 1, "symbol": "AAPL", "price": 173.50, "change": 1.25 },
+  { "id": 2, "symbol": "NVDA", "price": 460.10, "change": 2.50 },
+  { "id": 3, "symbol": "TSLA", "price": 245.30, "change": -0.80 },
+  { "id": 4, "symbol": "AMZN", "price": 135.20, "change": 1.10 },
+  { "id": 5, "symbol": "MSFT", "price": 320.90, "change": 0.45 }
+]

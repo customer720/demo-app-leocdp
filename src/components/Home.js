@@ -249,11 +249,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 4) Market Trends (Clickable) */}
+        {/* 4) Market Summary (Clickable) */}
         <div className="col-md-6 col-lg-6">
           <div className="card shadow-sm h-100 border-0">
             <div className="card-header bg-white py-3">
-              <h5 className="mb-0 fw-bold">🔥 Market Trends</h5>
+              <h5 className="mb-0 fw-bold">🔥 Market Summary</h5>
             </div>
             <div className="list-group list-group-flush">
               {topTrends.map((trend, index) => (

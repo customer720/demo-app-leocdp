@@ -26,7 +26,7 @@ const LOGIN_KEY_NAME = "isLoggedIn";
 
 const MENU_ITEMS = [
   { path: "/home", label: "My Home", icon: "🏠" },
-  { path: "/market-trends", label: "Market Trends", icon: "📊" },
+  { path: "/market-trends", label: "Market Summary", icon: "📊" },
   { path: "/trading", label: "Trading Board", icon: "📈" },
   { path: "/knowledge", label: "Investing Courses", icon: "🎓" },
   { path: "/book-reviews", label: "Book Reviews", icon: "📚" },
@@ -122,7 +122,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar }) => {
         >
           {isCollapsed ? "☰" : "⬅"}
         </button>
-        {!isCollapsed && <span className="fs-5 fw-bold text-primary"> FinTech Demo </span>}
+        {!isCollapsed && <span className="fs-5 fw-bold text-primary"> Investing 101 </span>}
       </div>
       
       <ul className="nav nav-pills flex-column mb-auto">

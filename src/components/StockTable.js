@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import useToast from "../utils/UseToast";
 
 // ==========================================
 // 1. TOAST NOTIFICATION SYSTEM
@@ -49,24 +50,33 @@ const ToastContainer = ({ toasts, removeToast }) => {
 // 2. CUSTOM HOOKS (Logic Layer)
 // ==========================================
 
-const useToast = () => {
-  const [toasts, setToasts] = useState([]);
 
-  const addToast = useCallback((message, type = "primary", icon = "bi-info-circle") => {
-    const id = Date.now();
-    setToasts((prev) => [...prev, { id, message, type, icon }]);
+const useWatchlist = (addToast) => {
+  const [watchlist, setWatchlist] = useState(() => {
+    if (typeof window === "undefined") return [];
+    const saved = localStorage.getItem("watchlist");
+    return saved ? JSON.parse(saved) : [];
+  });
 
-    // Auto-dismiss after 3 seconds
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 3000);
-  }, []);
+  useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+  }, [watchlist]);
 
-  const removeToast = (id) => {
-    setToasts((prev) => prev.filter((t) => t.id !== id));
+  const isInWatchlist = (symbol) => watchlist.some((s) => s.symbol === symbol);
+
+  const toggleWatchlist = (stock) => {
+    if (isInWatchlist(stock.symbol)) {
+      setWatchlist((prev) => prev.filter((s) => s.symbol !== stock.symbol));
+      if (window.LeoObserver) window.LeoObserver.recordEventRemoveWatchlist({ stockSymbol: stock.symbol });
+      addToast(`Removed ${stock.symbol} from Watchlist`, "secondary", "bi-star");
+    } else {
+      setWatchlist((prev) => [...prev, stock]);
+      if (window.LeoObserver) window.LeoObserver.recordEventAddWatchlist({ stockSymbol: stock.symbol });
+      addToast(`Added ${stock.symbol} to Watchlist`, "warning", "bi-star-fill");
+    }
   };
 
-  return { toasts, addToast, removeToast };
+  return { watchlist, isInWatchlist, toggleWatchlist };
 };
 
 const usePortfolio = (addToast) => {
@@ -112,33 +122,7 @@ const usePortfolio = (addToast) => {
   return { portfolio, tradeStock };
 };
 
-const useWatchlist = (addToast) => {
-  const [watchlist, setWatchlist] = useState(() => {
-    if (typeof window === "undefined") return [];
-    const saved = localStorage.getItem("watchlist");
-    return saved ? JSON.parse(saved) : [];
-  });
 
-  useEffect(() => {
-    localStorage.setItem("watchlist", JSON.stringify(watchlist));
-  }, [watchlist]);
-
-  const isInWatchlist = (symbol) => watchlist.some((s) => s.symbol === symbol);
-
-  const toggleWatchlist = (stock) => {
-    if (isInWatchlist(stock.symbol)) {
-      setWatchlist((prev) => prev.filter((s) => s.symbol !== stock.symbol));
-      if (window.LeoObserver) window.LeoObserver.recordEventRemoveWatchlist({ stockSymbol: stock.symbol });
-      addToast(`Removed ${stock.symbol} from Watchlist`, "secondary", "bi-star");
-    } else {
-      setWatchlist((prev) => [...prev, stock]);
-      if (window.LeoObserver) window.LeoObserver.recordEventAddWatchlist({ stockSymbol: stock.symbol });
-      addToast(`Added ${stock.symbol} to Watchlist`, "warning", "bi-star-fill");
-    }
-  };
-
-  return { watchlist, isInWatchlist, toggleWatchlist };
-};
 
 // ==========================================
 // 3. SUB-COMPONENTS (Presentation Layer)

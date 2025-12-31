@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Value Investing Foundations",
+        "provider": "Columbia Business School Online",
+        "coverUrl": "https://cdn.educba.com/academy/wp-content/uploads/2024/09/What-is-Value-Investing-.png",
+        "level": "Beginner",
+        "description": "Learn the core principles of value investing inspired by Benjamin Graham and Warren Buffett, including intrinsic value, margin of safety, and financial statement analysis."
+    },
+    {
+        "id": 2,
+        "title": "Stock Market Investing for Beginners",
+        "provider": "Coursera",
+        "coverUrl": "https://juaninvestor.com/wp-content/uploads/2024/07/how-to-start-investing-for-beginners.png.webp",
+        "level": "Beginner",
+        "description": "An introductory course covering how stock markets work, basic investment strategies, risk management, and long-term portfolio building."
+    },
+    {
+        "id": 3,
+        "title": "Fundamental Analysis of Stocks",
+        "provider": "Udemy",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Intermediate",
+        "description": "Analyze companies using income statements, balance sheets, cash flow, and valuation ratios to identify high-quality stocks."
+    },
+    {
+        "id": 4,
+        "title": "Technical Analysis & Trading Strategies",
+        "provider": "Investopedia Academy",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Intermediate",
+        "description": "Master chart patterns, indicators, support and resistance, and practical trading setups used by professional traders."
+    },
+    {
+        "id": 5,
+        "title": "Behavioral Finance & Investor Psychology",
+        "provider": "Yale University (Open Course)",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Intermediate",
+        "description": "Understand how cognitive biases and emotional decision-making impact investors and financial markets."
+    },
+    {
+        "id": 6,
+        "title": "Portfolio Management & Asset Allocation",
+        "provider": "CFA Institute",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Advanced",
+        "description": "Learn modern portfolio theory, diversification strategies, and risk-adjusted performance measurement."
+    },
+    {
+        "id": 7,
+        "title": "Options Trading Strategies",
+        "provider": "Options Industry Council",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Advanced",
+        "description": "Explore options basics, spreads, hedging techniques, and income-generating strategies using derivatives."
+    },
+    {
+        "id": 8,
+        "title": "Algorithmic Trading Concepts",
+        "provider": "QuantInsti",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Advanced",
+        "description": "Introduction to systematic trading, backtesting strategies, and using data-driven models in financial markets."
+    },
+    {
+        "id": 9,
+        "title": "Long-Term Investing & Wealth Building",
+        "provider": "Vanguard Investor Education",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Beginner",
+        "description": "Focus on long-term investing principles, index funds, compounding, and minimizing costs and taxes."
+    },
+    {
+        "id": 10,
+        "title": "Risk Management for Traders",
+        "provider": "Interactive Brokers Academy",
+        "coverUrl": "https://get.investors.com/wp-content/uploads/2020/12/graphic-foundations-lvl1.jpg",
+        "level": "Intermediate",
+        "description": "Learn position sizing, drawdown control, stop-loss strategies, and protecting capital in volatile markets."
+    }
+]

@@ -96,6 +96,11 @@ if (typeof window.LeoObserverProxy === "object") {
     LeoObserverProxy.recordActionEvent("ask-question", eventData);
   };
 
+    LeoObserver.recordEventFocusIndexMetric = function (eventData) {
+      eventData = eventData ? eventData : {};
+      LeoObserverProxy.recordActionEvent("focus-index-metric", eventData);
+    };
+
   // (2.8) function to track Conversion Event "Purchase"
   LeoObserver.recordEventPurchase = function (
     eventData,

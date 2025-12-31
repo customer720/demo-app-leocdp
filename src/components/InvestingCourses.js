@@ -1,85 +1,86 @@
 import React, { useEffect, useState } from "react";
 import useToast from "../utils/UseToast";
 
-const DATA_URL = "/mock/book-review.json";
+const DATA_URL = "/mock/investing-courses.json";
 
 /**
- * 
- * 
- * BookReviews
- * - Load books via AJAX (fetch)
- * - Toggle "Want to Read" → Reading List
- * - Persist to localStorage
- * - Emit toast + observer events
- * - 📊 Reading List → Signal → Recommendation → Activation
- *
+ * InvestingCourses
+ * - AJAX load courses
+ * - Course cover image
+ * - Toggle "Want to Learn"
+ * - localStorage persistence
+ * - Toast + LeoObserver signals
+ * - 🎯 Intent → Skill Gap → Course Recommendation → Activation flow
  */
-export default function BookReviews() {
-  const [books, setBooks] = useState([]);
+export default function InvestingCourses() {
+  const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const { toasts, addToast, removeToast } = useToast();
 
   /* ================================
-   * Reading List (localStorage)
+   * Learning List (localStorage)
    * ================================ */
-  const [readingList, setReadingList] = useState(() => {
+  const [learningList, setLearningList] = useState(() => {
     if (typeof window === "undefined") return [];
-    const saved = localStorage.getItem("reading_list");
+    const saved = localStorage.getItem("learning_list");
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem("reading_list", JSON.stringify(readingList));
-  }, [readingList]);
+    localStorage.setItem(
+      "learning_list",
+      JSON.stringify(learningList)
+    );
+  }, [learningList]);
 
-  const isInReadingList = (bookId) =>
-    readingList.some((b) => b.id === bookId);
+  const isInLearningList = (courseId) =>
+    learningList.some((c) => c.id === courseId);
 
-  const toggleReadingList = (book) => {
-    if (isInReadingList(book.id)) {
-      setReadingList((prev) =>
-        prev.filter((b) => b.id !== book.id)
+  const toggleLearningList = (course) => {
+    if (isInLearningList(course.id)) {
+      setLearningList((prev) =>
+        prev.filter((c) => c.id !== course.id)
       );
 
       if (window.LeoObserver) {
-        window.LeoObserver.recordEventRemoveReadingList({
-          bookId: book.id,
-          title: book.title
+        window.LeoObserver.recordEventRemoveLearningCourse({
+          courseId: course.id,
+          title: course.title
         });
       }
 
       addToast(
-        `Removed "${book.title}" from Reading List`,
+        `Removed "${course.title}" from Learning List`,
         "secondary",
-        "bi-bookmark"
+        "bi-mortarboard"
       );
     } else {
-      setReadingList((prev) => [...prev, book]);
+      setLearningList((prev) => [...prev, course]);
 
       if (window.LeoObserver) {
-        window.LeoObserver.recordEventAddReadingList({
-          bookId: book.id,
-          title: book.title
+        window.LeoObserver.recordEventAddLearningCourse({
+          courseId: course.id,
+          title: course.title
         });
       }
 
       addToast(
-        `Added "${book.title}" to Reading List`,
-        "success",
-        "bi-bookmark-fill"
+        `Added "${course.title}" to Learning List`,
+        "info",
+        "bi-mortarboard-fill"
       );
     }
   };
 
   /* ================================
-   * Load books (AJAX)
+   * Load courses (AJAX)
    * ================================ */
   useEffect(() => {
     let mounted = true;
 
-    async function loadBooks() {
+    async function loadCourses() {
       try {
         const res = await fetch(DATA_URL, {
           method: "GET",
@@ -95,7 +96,7 @@ export default function BookReviews() {
           throw new Error("Invalid response format");
         }
 
-        if (mounted) setBooks(data);
+        if (mounted) setCourses(data);
       } catch (err) {
         if (mounted) setError(err.message);
       } finally {
@@ -103,7 +104,7 @@ export default function BookReviews() {
       }
     }
 
-    loadBooks();
+    loadCourses();
     return () => {
       mounted = false;
     };
@@ -116,7 +117,7 @@ export default function BookReviews() {
     return (
       <div className="container my-5 text-center text-muted">
         <div className="spinner-border mb-3" />
-        <div>Loading book reviews…</div>
+        <div>Loading investing courses…</div>
       </div>
     );
   }
@@ -125,7 +126,7 @@ export default function BookReviews() {
     return (
       <div className="container my-5">
         <div className="alert alert-danger">
-          Failed to load book reviews: {error}
+          Failed to load courses: {error}
         </div>
       </div>
     );
@@ -136,39 +137,30 @@ export default function BookReviews() {
    * ================================ */
   return (
     <div className="container my-5">
-      <h3 className="fw-bold mb-1">
-        Most Popular Investing Books
-      </h3>
+      <h3 className="fw-bold mb-1">Investing Courses</h3>
       <p className="text-muted mb-4">
-        Books frequently added by investors and stock traders
+        Structured learning paths for investors and traders
       </p>
 
       <div className="list-group list-group-flush">
-        {books.map((book, index) => {
-          const inList = isInReadingList(book.id);
+        {courses.map((course) => {
+          const inList = isInLearningList(course.id);
 
           return (
             <div
-              key={book.id}
+              key={course.id}
               className="list-group-item py-4 border-bottom"
             >
               <div className="row g-3 align-items-start">
-                {/* Rank */}
-                <div className="col-auto">
-                  <span className="fs-4 fw-bold text-muted">
-                    #{index + 1}
-                  </span>
-                </div>
-
                 {/* Cover */}
                 <div className="col-auto">
                   <img
-                    src={book.coverUrl}
-                    alt={book.title}
+                    src={course.coverUrl}
+                    alt={course.title}
                     className="rounded shadow-sm"
                     style={{
-                      width: 80,
-                      height: 120,
+                      width: 120,
+                      height: 80,
                       objectFit: "cover"
                     }}
                   />
@@ -177,45 +169,37 @@ export default function BookReviews() {
                 {/* Content */}
                 <div className="col">
                   <h5 className="fw-bold mb-1">
-                    {book.title}
+                    {course.title}
                   </h5>
-                  <div className="text-muted mb-2">
-                    {book.author}
-                  </div>
 
-                  <div className="d-flex align-items-center mb-2">
-                    <i className="bi bi-star-fill text-warning me-1" />
-                    <span className="fw-semibold me-2">
-                      {book.rating}
-                    </span>
-                    <span className="text-muted small">
-                      {book.ratingsCount.toLocaleString()} ratings ·{" "}
-                      {Math.floor(book.shelvings / 1_000_000)}m shelvings
-                    </span>
+                  <div className="text-muted mb-2">
+                    {course.provider} · {course.level}
                   </div>
 
                   <p className="mb-3">
-                    {book.description}
+                    {course.description}
                   </p>
 
                   <button
                     className={`btn btn-sm ${
                       inList
-                        ? "btn-outline-success"
-                        : "btn-success"
+                        ? "btn-outline-info"
+                        : "btn-info"
                     }`}
-                    onClick={() => toggleReadingList(book)}
+                    onClick={() =>
+                      toggleLearningList(course)
+                    }
                   >
                     <i
                       className={`bi ${
                         inList
-                          ? "bi-bookmark-fill"
-                          : "bi-bookmark"
+                          ? "bi-mortarboard-fill"
+                          : "bi-mortarboard"
                       } me-2`}
                     />
                     {inList
-                      ? "In Reading List"
-                      : "Want to Read"}
+                      ? "In Learning List"
+                      : "Want to Learn"}
                   </button>
                 </div>
               </div>

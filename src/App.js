@@ -10,10 +10,10 @@ import {
 } from "react-router-dom";
 
 // === Component Imports ===
-import LoginScreen from "./components/LoginScreen"; // <--- NEW IMPORT
+import LoginScreen from "./components/LoginScreen";
 import Home from "./components/Home";
 import MarketTrends from "./components/MarketTrends";
-import InvestingKnowledge from "./components/InvestingKnowledge";
+import InvestingCourse from "./components/InvestingCourses";
 import BookReviews from "./components/BookReviews";
 import { StockTable } from "./components/StockTable";
 import { StockChart } from "./components/StockChart";
@@ -169,7 +169,7 @@ const ProtectedLayout = ({ auth, onLogout }) => {
       <div style={contentStyle}>
         <div className="container-fluid p-4">
           {/* Top Header */}
-          <div className="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm">
+          <div id="top-header" className="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm">
             <h1 className="h4 m-0 fw-bold text-secondary">
               {currentItem ? currentItem.label : "Dashboard"}
             </h1>
@@ -214,7 +214,7 @@ export default function App() {
               <StockTable stocks={stocks} onSelectStock={setSelectedStock} />
             </>
           } />
-          <Route path="/knowledge" element={<InvestingKnowledge />} />
+          <Route path="/knowledge" element={<InvestingCourse />} />
           <Route path="/book-reviews" element={<BookReviews />} />
         </Route>
 

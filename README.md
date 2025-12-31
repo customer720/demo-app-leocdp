@@ -2,7 +2,6 @@
 
 ![screenshot-stock-dashboard](screenshot-stock-dashboard.jpeg)
 
-
 This project is a **React.js demo application** served via **local Nginx** at [`https://trading.example.com`](https://trading.example.com).
 It simulates a stock trading interface while testing **LEO CDP tracking** integration.
 
@@ -37,8 +36,8 @@ src/
 ### 1. Clone Repo & Install Dependencies
 
 ```bash
-git clone https://github.com/yourname/trading-demo-leocdp.git
-cd trading-demo-leocdp
+git clone https://gitlab.innotech.vn/cdp-ai/demo-app-leocdp.git
+cd demo-app-leocdp
 npm install
 ```
 
@@ -168,7 +167,7 @@ All user interactions will be sent to **LEO CDP** for testing and verification.
 
 ---
 
-## Check customer 360 report 
+## Check customer 360 report at DEV server
 
 * https://dcdp.bigdatavietnam.org/#calljs-leoCdpRouter('Data_Journey_Map','1qtwifbEDNz8uqxF3U00if')
 * Username: demo
@@ -177,5 +176,4 @@ All user interactions will be sent to **LEO CDP** for testing and verification.
 ### Screenshot of customer 360 report 
 
 ![screenshot-profile-in-leocdp](screenshot-profile-in-leocdp.jpeg)
-
 

@@ -22,7 +22,7 @@
 
     // to synch user contact into LEO CDP
     function submitTestUserContact() {
-      LeoObserver.recordEventSubmitContact({"firstName":"Trieu","email":"trieu@leocdp.com","phone":"0901111111"})
+      LeoObserver.recordEventSubmitContact({ "firstName": "Trieu", "email": "trieu@leocdp.com", "phone": "0901111111" })
     }
   </script>
 </head>
@@ -35,15 +35,46 @@
     // (1) CDP_EVENT_OBSERVER: load JavaScript code for [Localhost]
     (function () {
       // Observer ID
-      window.leoObserverId = "5WcEstjfDYPKoB3AyYQCYE";
+      window.leoObserverId = "cOFStgz29EffBE2gyaVqf";
+      window.leoObserverBatchSize = 5;
 
       // CDN of JS
-      window.leoObserverLogDomain = "datahub4dcdp.bigdatavietnam.org";
-      window.leoObserverCdnDomain = "cdn.jsdelivr.net/gh/USPA-Technology/leo-cdp-static-files@v0.8.9.35";
+      window.leoObserverLogDomain = "obs.example.com";
+      window.leoObserverCdnDomain = "obs.example.com";
     })();
 
+    (function () {
+      // ===== Leo Proxy URL =====
+      var leoproxyJsPath = "/public/js/leo-observer-src/leo.proxy.js";
+      var proxySrc =
+        location.protocol +
+        "//" +
+        window.leoObserverCdnDomain +
+        leoproxyJsPath;
+
+      // ===== Create Leo Proxy Script =====
+      var proxyScript = document.createElement("script");
+      proxyScript.src = proxySrc;
+      proxyScript.async = true;
+      proxyScript.defer = true;
+
+      // ===== When Leo Proxy is READY → load CDP tracking =====
+      proxyScript.onload = function () {
+        var trackingScript = document.createElement("script");
+        trackingScript.src = "cdp.tracking.js";
+        trackingScript.async = true;
+        document.head.appendChild(trackingScript);
+      };
+
+      // ===== Insert proxy first =====
+      document.head.appendChild(proxyScript);
+
+      // ===== Data Touchpoint Metadata =====
+      window.srcTouchpointName = encodeURIComponent(document.title);
+      window.srcTouchpointUrl = encodeURIComponent(location.href);
+    })();
   </script>
-  <script src="cdp.tracking.js"></script>
+
 
 </body>
 

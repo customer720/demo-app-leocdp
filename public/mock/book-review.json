@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "title": "The Intelligent Investor",
+        "author": "Benjamin Graham",
+        "rating": 4.6,
+        "ratingsCount": 1250000,
+        "shelvings": 3200000,
+        "description": "The definitive book on value investing, teaching discipline, risk control, and long-term thinking.",
+        "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/91+t0Di07FL.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Common Stocks and Uncommon Profits",
+        "author": "Philip A. Fisher",
+        "rating": 4.4,
+        "ratingsCount": 420000,
+        "shelvings": 1100000,
+        "description": "A deep dive into qualitative analysis and long-term growth investing.",
+        "coverUrl": "https://m.media-amazon.com/images/I/61tzuAYGKqL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "id": 3,
+        "title": "A Random Walk Down Wall Street",
+        "author": "Burton G. Malkiel",
+        "rating": 4.3,
+        "ratingsCount": 980000,
+        "shelvings": 2100000,
+        "description": "Explains efficient markets, index investing, and why beating the market is hard.",
+        "coverUrl": "https://m.media-amazon.com/images/I/81z+0nf8vVL._SL1500_.jpg"
+    },
+    {
+        "id": 4,
+        "title": "One Up On Wall Street",
+        "author": "Peter Lynch",
+        "rating": 4.5,
+        "ratingsCount": 760000,
+        "shelvings": 1800000,
+        "description": "How individual investors can find winning stocks before Wall Street does.",
+        "coverUrl": "https://m.media-amazon.com/images/I/51Pft+2gbaL._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Little Book of Common Sense Investing",
+        "author": "John C. Bogle",
+        "rating": 4.6,
+        "ratingsCount": 890000,
+        "shelvings": 2000000,
+        "description": "A strong case for low-cost index fund investing and long-term discipline.",
+        "coverUrl": "https://m.media-amazon.com/images/I/51wvE48u69L._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Market Wizards",
+        "author": "Jack D. Schwager",
+        "rating": 4.5,
+        "ratingsCount": 310000,
+        "shelvings": 850000,
+        "description": "Interviews with top traders revealing psychology, risk, and strategy.",
+        "coverUrl": "https://m.media-amazon.com/images/I/51Xh8kTlirL._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+        "id": 7,
+        "title": "The Psychology of Money",
+        "author": "Morgan Housel",
+        "rating": 4.7,
+        "ratingsCount": 2100000,
+        "shelvings": 4200000,
+        "description": "How behavior, not intelligence, determines financial success.",
+        "coverUrl": "https://m.media-amazon.com/images/I/81fLbwr3vQL._SL1500_.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Trading in the Zone",
+        "author": "Mark Douglas",
+        "rating": 4.4,
+        "ratingsCount": 260000,
+        "shelvings": 690000,
+        "description": "A classic on trading mindset, probabilities, and emotional discipline.",
+        "coverUrl": "https://m.media-amazon.com/images/I/51A45j8MO-L._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Security Analysis",
+        "author": "Benjamin Graham & David Dodd",
+        "rating": 4.3,
+        "ratingsCount": 190000,
+        "shelvings": 540000,
+        "description": "The foundational textbook for professional value investors.",
+        "coverUrl": "https://m.media-amazon.com/images/I/81Sy9bFRKaL._SL1500_.jpg"
+    },
+    {
+        "id": 10,
+        "title": "The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution",
+        "author": "Gregory Zuckerman",
+        "rating": 4.5,
+        "ratingsCount": 5170,
+        "shelvings": 610000,
+        "description": "The unbelievable story of a secretive mathematician who pioneered the era of the algorithm–and made $23 billion doing it..",
+        "coverUrl": "https://m.media-amazon.com/images/I/81G9JO7+ViL._SL1500_.jpg"
+    }
+]
